@@ -21,24 +21,24 @@ class AchievementController extends Controller
 
     public function store(Request $request)
     {
-        $user = Achievement::create($request->all());
+        $achievement = Achievement::create($request->all());
 
-        return response()->json($user, 201);
+        return response()->json($achievement, 201);
     }
 
     public function delete($id)
     {
-        $user = Achievement::findOrFail($id);
-        $user->delete();
+        $achievement = Achievement::findOrFail($id);
+        $achievement->delete();
 
         return response()->json(['message' => 'Deleted sucessfully.'], 201);
     }
 
     public function update($id, Request $request)
     {
-        $user = Achievement::findOrFail($id);
-        $user->upadate($request->all());
+        $achievement = Achievement::findOrFail($id);
+        $achievement->update($request->all());
 
-        return response()->json($user, 200);
+        return response()->json($achievement, 200);
     }
 }
