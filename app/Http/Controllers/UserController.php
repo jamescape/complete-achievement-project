@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Achievement;
 
 class UserController extends Controller
 {
@@ -42,5 +43,15 @@ class UserController extends Controller
         $user->upadate($request->all());
 
         return response()->json($user, 200);
+    }
+
+    public function assignAchievement($userId, $achievementId)
+    {
+        $user = User::findOrFail($userId);
+        $achievement = Achievement::findOrFail($achievementId);
+
+        $user->achievements()->attach($achievement);
+
+        return response()->json(['message' => 'Attached successfully.'], 200);
     }
 }
