@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::post('/api/{userId}/assign/{achievementId}', [UserController::class, 'assignAchievement']);
+Route::post('/user/{userId}/assign/{achievementId}', [UserController::class, 'assignAchievement']);
 Route::delete('/user/{id}', [UserController::class, 'delete']);
 Route::put('/user/{id}', [UserController::class, 'update']);
 Route::get('/user/{id}', [UserController::class, 'show']);
