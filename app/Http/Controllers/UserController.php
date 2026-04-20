@@ -35,6 +35,7 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Deleted sucessfully.'], 201);
     }
+
     public function update($id, Request $request)
     {
         $user = User::findOrFail($id);
