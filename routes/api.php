@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,9 @@ Route::put('/user/{id}', [UserController::class, 'update']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 Route::post('/user', [UserController::class, 'store']);
 Route::get('/user', [UserController::class, 'index']);
+
+Route::delete('/achievement/{id}', [AchievementController::class, 'delete']);
+Route::put('/achievement/{id}', [AchievementController::class, 'update']);
+Route::get('/achievement/{id}', [AchievementController::class, 'show']);
+Route::post('/achievement', [AchievementController::class, 'store']);
+Route::get('/achievement', [AchievementController::class, 'index']);
